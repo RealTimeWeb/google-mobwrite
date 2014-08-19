@@ -4,17 +4,17 @@ This stuff is all hacked together from what I've read below, alongside [this dot
 
 There are two big components, the Gateway and the Daemon (man that sounds dark and gothic).
 
-== Gateway
+### Gateway
 
 This is just an incredibly simple python server that pushes any requests over to the local daemon (via socket). The tutorial covers setting it up as [WSGI](http://docs.dotcloud.com/tutorials/python/mobwrite/#wsgi-py-file).
 
-== Daemon
+### Daemon
 
 This listens through sockets for any incoming data from the gateway, does some crazy [Operational Transform](http://en.wikipedia.org/wiki/Operational_transformation) magic and then spits back out the latest copy of the data back to whoever asks for it. It doesn't have any external dependencies.
 
 Per the tutorial, I set it up through supervisord and then just pray a lot.
 
-== Connecting
+### Connecting
 
 [think.cs.vt.edu/mobwrite/q/](Here) is where that ends up being available through the Javascript libraries. Not much to look at from a browser, there's still a good bit of client-side magic to make everything happen.
 
